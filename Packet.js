@@ -48,3 +48,6 @@ OutPacket.prototype.writeMDHeader = function(recipients, sender, msgtype){
 };
 
 OutPacket.prototype.serialize = function(){ var l = this.buf.length; return new Buffer([l & 0xFF, (l >> 8) & 0xFF].concat(this.buf));  };
+
+module.exports.Packet = Packet;
+module.exports.OutPacket = OutPacket;
