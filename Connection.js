@@ -21,8 +21,9 @@ function TLSServer(port, key, cert){
 	tls.createServer({
 		key: key,
 		cert: cert
-	}, handleConnection);
+	}, handleConnection).listen(this.port);
 }
 
 
 module.exports.Connection = Connection;
+module.exports.TLSServer = TLSServer;
